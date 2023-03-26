@@ -5,7 +5,7 @@ The objective of the project is to re-engineer the ACME application adopting the
 This project was developed for evaluation in the Systems Integration course of the Master in Informatics Engineering - Software Engineering at Instituto Superior de Engenharia do Porto - ISEP/IPP
 
 #### Two dimensions of decentralization/distribution are addressed:
-- Business Domain Segregation: The monolithic application was segregated into three distinct but collaborative applications: 
+- Business Domain Segregation: The monolithic application was segregated into three distinct but collaborative applications:
     - Products
     - Reviews
     - Votes
@@ -31,7 +31,7 @@ This project was developed for evaluation in the Systems Integration course of t
 - Polyglot persistence
 - Messaging (RabbitMQ - AMQP Message Broker)
 - The Domain Events
-- Event Sourcing 
+- Event Sourcing
 - Saga
 ## Tools
 - Docker
@@ -50,9 +50,12 @@ This project was developed for evaluation in the Systems Integration course of t
 - Bootstrap
 - Product, Review e Votes (Command/Query)
 
+## Students
+| <img alt="@DavidGomesh" src="https://avatars.githubusercontent.com/DavidGomesh?size=64"> | <img alt="@RegianaBarbosa" src="https://avatars.githubusercontent.com/RegianaBarbosa?size=64"> |
+| :-: | :-: |
+| *David Gomes* | *Regiana Barbosa* |
 
-### Autores
-
-- [David Gomesh](https://github.com/DavidGomesh)
-- [Regiana Barbosa](https://github.com/RegianaBarbosa)
-
+## Professor
+| <img alt="@NunoSilva" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:6fcae13e-78be-47ae-b86f-32c59404c8a3/de6bf548-8908-4c59-bdac-2813d38f37a0/64"> |
+| :-: |
+| *Nuno Silva* |
