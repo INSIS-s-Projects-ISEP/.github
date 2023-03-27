@@ -51,11 +51,11 @@ This project was developed for evaluation in the Systems Integration course of t
 - Product, Review e Votes (Command/Query)
 
 ## Students
-| <img alt="@DavidGomesh" src="https://avatars.githubusercontent.com/DavidGomesh?size=64"> | <img alt="@RegianaBarbosa" src="https://avatars.githubusercontent.com/RegianaBarbosa?size=64"> |
+| <img alt="@DavidGomesh" src="https://avatars.githubusercontent.com/DavidGomesh?size=64" style="border-radius: 50%;"> | <img alt="@RegianaBarbosa" src="https://avatars.githubusercontent.com/RegianaBarbosa?size=64" style="border-radius: 50%;"> |
 | :-: | :-: |
 | *David Gomes* | *Regiana Barbosa* |
 
 ## Professor
-| <img alt="@NunoSilva" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:6fcae13e-78be-47ae-b86f-32c59404c8a3/de6bf548-8908-4c59-bdac-2813d38f37a0/64"> |
+| <img alt="@NunoSilva" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:6fcae13e-78be-47ae-b86f-32c59404c8a3/de6bf548-8908-4c59-bdac-2813d38f37a0/64" style="border-radius: 50%;"> |
 | :-: |
 | *Nuno Silva* |
