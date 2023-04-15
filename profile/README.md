@@ -84,12 +84,12 @@ This project was developed for evaluation in the Systems Integration course of t
 
 ## Sequence Diagrams
 ### POST Product
-![case01-post-product](./docs/ACME-Case%2001%20HttpClient%20POST%20Product%20Request.svg)
+![case01-post-product](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-Case%2001%20HttpClient%20POST%20Product%20Request.svg)
 
 <br>
 
 ### POST Review
-![case02-post-review](./docs/ACME%20-Case%2002%20HttpClient%20POST%20Review%20Request.svg)
+![case02-post-review](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME%20-Case%2002%20HttpClient%20POST%20Review%20Request.svg)
 
 <br>
 
