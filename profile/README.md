@@ -77,29 +77,29 @@ This project was developed for evaluation in the Systems Integration course of t
 
 # Documentation
 ## Logic View
-![logic view image](docs/ACME-logic-view.svg)
+![logic view image](./docs/ACME-logic-view.svg)
 
 ## Physical View
-![physical view image](docs/ACME-physical%20view.svg)
+![physical view image](./docs/ACME-physical%20view.svg)
 
 ## Sequence Diagrams
 ### Case 01 POST Product
-![case01-post-product](docs/ACME-Case%2001%20HttpClient%20POST%20Product%20Request.svg)
+![case01-post-product](./docs/ACME-Case%2001%20HttpClient%20POST%20Product%20Request.svg)
 
 <br>
 
 ### Case 02 POST Review
-![case02-post-review](docs/ACME%20-Case%2002%20HttpClient%20POST%20Review%20Request.svg)
+![case02-post-review](./docs/ACME%20-Case%2002%20HttpClient%20POST%20Review%20Request.svg)
 
 <br>
 
 ### Case 03 POST Vote
-![case03-post-vote](docs/ACME-Case%2003%20HttpClient%20POST%20Vote%20Request.svg)
+![case03-post-vote](./docs/ACME-Case%2003%20HttpClient%20POST%20Vote%20Request.svg)
 
 <br>
 
 ### Case 04 SAGA
-![case04-saga](docs/ACME-Case%2004(SAGA).svg)
+![case04-saga](./docs/ACME-Case%2004(SAGA).svg)
 <br>
 
 <br>
