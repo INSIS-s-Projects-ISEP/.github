@@ -169,7 +169,7 @@ Now you can use the services locally with docker-compose. Make sure the services
 # :computer: Development
 
 ## Refactoring
-**1. Adoção da arquitetura em camadas**<br>
+**1. Layered architecture restructuring**<br>
 
 We performed significant refactoring of the application by adopting the typical layered architecture of software development. This architecture includes the layers of controller, model, repository, and service, each with its well-defined responsibility.
 
