@@ -111,26 +111,40 @@ This tutorial will guide you through the installation and execution of the servi
 <br>
 
 ## Prerequisites
-- Docker Engine installed. <br>
-You can download it at https://www.docker.com/products/docker-desktop/
+- [Docker Engine](https://www.docker.com/products/docker-desktop/) installed.
+- Sufficient hardware and software resources to support the execution of all applications simultaneously without causing performance or stability issues.
+    - Applications:
+        * discovery-system
+        * load-balancer
+        * axonserver
+        * product-command
+        * product-command-bootstrapper
+        * product-query
+        * product-query-bootstrapper
+        * review-command
+        * review-command-bootstrapper
+        * review-query
+        * review-query-bootstrapper
+        * vote-command
+        * vote-command-bootstrapper
+        * vote-query
+        * vote-query-bootstrapper
 
 <br>
 
 ## Step-by-step
-1. Download and install Docker Engine on your machine.
+1. Open Docker to view the applications.
 
-2. Open Docker to view the applications.
+2. Download the [docker-compose.yml](https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/docs/docker-compose.yml) file required to start the services locally.
 
-3. Download the docker-compose.yml file required to start the services locally. You can find the file at https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/docs/docker-compose.yml
-
-4. Open a terminal and navigate to the directory where the docker-compose.yml file is saved. Then, execute the following command to start the services in the background: 
+3. Open a terminal and navigate to the directory where the [docker-compose.yml](https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/docs/docker-compose.yml) file is saved. Then, execute the following command to start the services in the background: 
 ```
 docker-compose up -d
 ```
 
-5. Wait for all services to start. You can check the status of the services using the `docker-compose ps` command.
+4. Wait for all services to start. You can check the status of the services using the `docker-compose ps` command.
 
-6. To access the services, use the following links:
+5. To access the services, use the following links:
 
 - Discovery System (Eureka Server): http://localhost:8761
 - Message Broker: http://localhost:15672
