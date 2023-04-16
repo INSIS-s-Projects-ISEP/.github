@@ -16,7 +16,7 @@ This project was developed for evaluation in the Systems Integration course of t
 
 ## Requirements
 
-### Non-functional requirements
+**Non-functional requirements**
 - Deployment must be automated through CI/CD.
 - Adoption of service component test pattern.
 - Adoption of end-to-end test pattern.
@@ -25,14 +25,14 @@ This project was developed for evaluation in the Systems Integration course of t
 
 <br>
 
-### Functional requirements
+**Functional requirements**
 - Endpoint in service Votes that allows creating a vote for a non-existing review. The review must be created for the specified product, and the vote is eventually associated with the review.
 
 - Develop a bootstrap process for the starting services. I.e. at any time, a new service can start and its data must be bootstrapped.
 
 <br>
 
-### _The following patterns must be adopted_:
+*The following patterns must be adopted:*
 - Strangler fig
 - Command-Query Responsibility Segregation (CQRS)
 - Database-per-Service
@@ -100,6 +100,52 @@ This project was developed for evaluation in the Systems Integration course of t
 
 ### SAGA
 ![case04-saga](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-Case%2004(SAGA).svg)
+
+<br>
+
+<br>
+
+# Starting services locally with docker-compose
+This tutorial will guide you through the installation and execution of the services required to start your application locally with docker-compose.
+
+<br>
+
+## Prerequisites
+- Docker Engine installed. <br>
+You can download it at https://www.docker.com/products/docker-desktop/
+
+<br>
+
+## Step-by-step
+1. Download and install Docker Engine on your machine.
+
+2. Open Docker to view the applications.
+
+3. Download the docker-compose.yml file required to start the services locally. You can find the file at https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/docs/docker-compose.yml
+
+4. Open a terminal and navigate to the directory where the docker-compose.yml file is saved. Then, execute the following command to start the services in the background: 
+```
+docker-compose up -d
+```
+
+5. Wait for all services to start. You can check the status of the services using the `docker-compose ps` command.
+
+6. To access the services, use the following links:
+
+- Discovery System (Eureka Server): http://localhost:8761
+- Message Broker: http://localhost:15672
+- Axon Server (Event Sourcing): http://localhost:8024
+
+<br>
+
+## Stopping the services
+You can stop the services at any time by using the `docker-compose down` command in the directory where the `docker-compose.yml` file is saved.
+
+<br>
+
+## Conclusion
+Now you can use the services locally with docker-compose. Make sure the services are stopped before running the application in another environment. If you have problems during installation or execution, make sure you followed the steps described in this tutorial correctly and that all prerequisites were met.
+
 <br>
 
 <br>
