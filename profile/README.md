@@ -98,37 +98,44 @@ In all requests, select the content type "JSON (application/json)" and click "Se
 4. Click "Send" to send the request.
 5. The reviews of the selected product will be displayed.
 
-**To get information about a specific review:**
+**To get information about all reviews:**
 
-1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/{id_review}".
-2. Replace "{id_review}" with the ID of the review you want to query.
-3. Click "Send" to send the request.
-4. The information of the selected review will be displayed.
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews".
+2. Click "Send" to send the request.
+3. All review will be displayed.
 
-**To get the accepted or rejected reviews:**
+**To get information about of products reviews by status:**
 
-1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/status/{status}".
-2. Replace "{status}" with "ACCEPTED" or "REJECTED" to get the reviews with the desired status.
-3. Click "Send" to send the request.
-4. The reviews with the selected status will be displayed.
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/products/{sku}/reviews/{approvalStatus}".
+2. Replace "{sku}" with the sku of the product you want to query.
+3. Replace "{approvalStatus}" with one of the status (PENDING, ACCEPTED, REJECTED) to get the reviews with the desired status.
+4. Click "Send" to send the request.
+5. The information of the selected review will be displayed.
 
-**To get reviews of a specific user:**
+**To get information about reviews of a specific user:**
 
-1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/user/{user}".
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/{user}".
 2. Replace "{user}" with the name of the user you want to query.
 3. Click "Send" to send the request.
 4. The reviews of the selected user will be displayed.
 
-**To get information about a specific vote:**
+**To get the pending reviews:**
 
-1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/votes/{id_vote}".
-2. Replace "{id_vote}" with the ID of the vote you want to query.
-3. Click "Send" to send the request.
-4. The information of the selected vote will be displayed.
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/pending".
+2. Click "Send" to send the request.
+5. The reviews with pending status will be displayed.
+
+**To get the accepted or rejected reviews:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/{reviewId}/acceptreject/{approvalStatus}".
+2. Replace "{id_review}" with the ID of the review you want to desired status.
+3. Replace "{approvalStatus}" with "ACCEPTED" or "REJECTED" to get the reviews with the desired status.
+4. Click "Send" to send the request.
+5. The reviews with the selected status will be displayed.
 
 **To get information about all votes of a specific review:**
 
-1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/votes/review/{id_review}".
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/{id_review}/votes".
 2. Replace "{id_review}" with the ID of the review you want to query.
 3. Click "Send" to send the request.
 4. The votes of the selected review will be displayed.
@@ -214,29 +221,29 @@ Now you can use the services locally with docker-compose. Make sure the services
 
 # :page_with_curl: Documentation
 ## Logic View
-![logic view image](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-logic-view.svg)
+![logic view image](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/acme/ACME-logic-view.svg)
 
 ## Physical View
-![physical view image](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-physical%20view.svg)
+![physical view image](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/acme/ACME-physical%20view.svg)
 
 ## Sequence Diagrams
 ### POST Product
-![case01-post-product](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-Case%2001%20HttpClient%20POST%20Product%20Request.svg)
+![case01-post-product](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/acme/ACME-Case%2001%20HttpClient%20POST%20Product%20Request.svg)
 
 <br>
 
 ### POST Review
-![case02-post-review](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME%20-Case%2002%20HttpClient%20POST%20Review%20Request.svg)
+![case02-post-review](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/acme/ACME%20-Case%2002%20HttpClient%20POST%20Review%20Request.svg)
 
 <br>
 
 ### POST Vote
-![case03-post-vote](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-Case%2003%20HttpClient%20POST%20Vote%20Request.svg)
+![case03-post-vote](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/acme/ACME-Case%2003%20HttpClient%20POST%20Vote%20Request.svg)
 
 <br>
 
 ### SAGA
-![case04-saga](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-Case%2004(SAGA).svg)
+![case04-saga](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/acme/ACME-Case%2004(SAGA).svg)
 
 <br>
 
