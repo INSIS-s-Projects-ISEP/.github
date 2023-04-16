@@ -52,7 +52,8 @@ docker-compose up -d
 <br>
 
 ## How to launch a new instance of a service on Docker
-You can stop the services at any time by using the `docker-compose down` command in the directory where the `docker-compose.yml` file is saved.
+
+If you want to create 5 new instances of the "product-command" service after starting it, use the command `docker-compose scale product-command=5`. It is possible to change the name of the service and the number of instances as needed, but it is important to consider that the maximum number of instances is limited by the processing power and resources available on the machine.
 
 <br>
 
@@ -99,7 +100,7 @@ Now you can use the services locally with docker-compose. Make sure the services
 - Command-Query Responsibility Segregation (CQRS)
 - Database-per-Service
 - Polyglot persistence
-- Messaging (RabbitMQ - AMQP Message Broker)
+- Messaging
 - The Domain Events
 - Event Sourcing
 - Saga
@@ -111,30 +112,25 @@ Now you can use the services locally with docker-compose. Make sure the services
 
 - Load Balance
 - Discovery System
-- Message Broker (RabbitMQ)
-- Event Sourcing (Axon Server)
+- Message Broker
+- Event Sourcing
 - Bootstrapper
-- Product, Review e Vote (Command/Query)
+- Applications: Product, Review e Vote (Command/Query)
 
 <br>
 
-## Programming Language
+## Technologies used for Software Development
 
 - Java (JDK 17)
 - Node.js
-
-<br>
-
-## Tools
-
-- Docker
-- RabbitMQ
-- H2
-- MongoDB
-- Axon Server
-- Eureka (Netflix)
 - Git/GitHub
 - GitHub Actions (CI)
+- Docker
+- RabbitMQ (AMQP)
+- Axon Server (Event Sourcing)
+- Netflix Eureka
+- H2 Database
+- MongoDB
 
 <br>
 
