@@ -67,7 +67,7 @@ Now you can use the services locally with docker-compose. Make sure the services
 
 <br>
 
-# Understanding the ACME application
+# :pushpin: Understanding the ACME application
 
 #### Two dimensions of decentralization/distribution are addressed:
 - Business Domain Segregation: The monolithic application was segregated into three distinct but collaborative applications:
@@ -77,7 +77,7 @@ Now you can use the services locally with docker-compose. Make sure the services
 
 - Cloning: Multiple instances of each of the above applications are deployed in containers.
 
-# :pushpin: Requirements
+# Requirements
 
 **Non-functional requirements**
 - Deployment must be automated through CI/CD.
