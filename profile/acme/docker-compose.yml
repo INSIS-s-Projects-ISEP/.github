@@ -138,14 +138,14 @@ services:
     networks:
       - acme-network
 
-  # vote-query:
-  #   image: acmeproject/vote-query
-  #   depends_on:
-  #     - discovery-system
-  #     - message-broker
-  #     - vote-query-bootstrapper
-  #   networks:
-  #     - acme-network
+  vote-query:
+    image: acmeproject/vote-query
+    depends_on:
+      - discovery-system
+      - message-broker
+      - vote-query-bootstrapper
+    networks:
+      - acme-network
 
 # ACME Network
 networks:
