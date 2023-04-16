@@ -14,7 +14,7 @@ This project was developed for evaluation in the Systems Integration course of t
 
 <br>
 
-## Requirements
+# :pushpin: Requirements
 
 **Non-functional requirements**
 - Deployment must be automated through CI/CD.
@@ -75,7 +75,7 @@ This project was developed for evaluation in the Systems Integration course of t
 
 <br>
 
-# Documentation
+# :page_with_curl: Documentation
 ## Logic View
 ![logic view image](https://raw.githubusercontent.com/INSIS-s-Projects-ISEP/.github/main/profile/docs/ACME-logic-view.svg)
 
@@ -105,7 +105,7 @@ This project was developed for evaluation in the Systems Integration course of t
 
 <br>
 
-# Starting services locally with docker-compose
+# :computer: Starting services locally with docker-compose
 This tutorial will guide you through the installation and execution of the services required to start your application locally with docker-compose.
 
 <br>
