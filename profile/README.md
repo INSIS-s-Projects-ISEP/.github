@@ -34,9 +34,9 @@ This tutorial will guide you through the installation and execution of the servi
 ## Step-by-step
 1. Open and run the Docker desktop application.
 
-2. Download the [docker-compose.yml](https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/docs/docker-compose.yml) file required to start the services locally.
+2. Download the [docker-compose.yml](https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/acme/docker-compose.yml) file required to start the services locally.
 
-3. Open a terminal and navigate to the directory where the [docker-compose.yml](https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/docs/docker-compose.yml) file is saved. Then, execute the following command to start the services in the background: 
+3. Open a terminal and navigate to the directory where the [docker-compose.yml](https://github.com/INSIS-s-Projects-ISEP/.github/blob/main/profile/acme/docker-compose.yml) file is saved. Then, execute the following command to start the services in the background: 
 ```
 docker-compose up -d
 ```
@@ -47,6 +47,7 @@ docker-compose up -d
 
 - Discovery System (Eureka Server): http://localhost:8761
 - Message Broker: http://localhost:15672
+    credentials:(Username: admin | Password: 123456)
 - Axon Server (Event Sourcing): http://localhost:8024
 
 <br>
