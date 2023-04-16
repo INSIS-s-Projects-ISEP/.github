@@ -57,6 +57,84 @@ If you want to create 5 new instances of the "product-command" service after sta
 
 <br>
 
+## Performing a test with HTTP requests using [Postman](https://www.postman.com/)
+
+<br>
+
+1. Create a POST request to http://localhost:8080/products, with the JSON {"sku": "123456789123", "designation": "Laptop", "description": "Black"} in the request body.
+
+2. Create a POST request to http://localhost:8080/products/123456789123/reviews, with the JSON {"user": "John Doe", "reviewText": "This product is great!", "rating": 4.5} in the request body.
+
+3. Create a PATCH request to localhost:8080/reviews/{id_review}/acceptreject/APPROVED, where {id_review} is the ID of the review you want to accept/reject.
+
+4. Create a POST request to localhost:8080/votes, with the JSON {"user": "Jane Doe", "reviewId": "{id_review}", "voteType": "UP_VOTE"} in the request body.
+
+5. Create a POST request to http://localhost:8080/products, with the JSON {"sku": "123456789156", "designation": "Mouse", "description": "Black"} in the request body.
+
+6. Create a POST request to localhost:8080/votes/for-non-existing-review, with the JSON {"user": "Jonas", "voteType": "UP_VOTE", "review": {"sku": "123456789156", "user": "Maria", "reviewText": "Great!", "rating": 4.0}} in the request body.
+
+In all requests, select the content type "JSON (application/json)" and click "Send" to send the request.
+
+<br>
+
+### **Test with GET requests**
+
+1. Open Postman and create a new request.
+2. Select the HTTP method "GET" and insert the URL "http://localhost:8080/products".
+3. Click "Send" to send the request.
+4. A list of all registered products will be displayed.
+
+**To get information about a specific product:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/products/{sku}".
+2. Replace "{sku}" with the SKU of the product you want to query.
+3. Click "Send" to send the request.
+4. The information of the selected product will be displayed.
+
+**To get reviews of a specific product:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/products/{sku}/reviews".
+2. Replace "{sku}" with the SKU of the product you want to query.
+4. Click "Send" to send the request.
+5. The reviews of the selected product will be displayed.
+
+**To get information about a specific review:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/{id_review}".
+2. Replace "{id_review}" with the ID of the review you want to query.
+3. Click "Send" to send the request.
+4. The information of the selected review will be displayed.
+
+**To get the accepted or rejected reviews:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/status/{status}".
+2. Replace "{status}" with "ACCEPTED" or "REJECTED" to get the reviews with the desired status.
+3. Click "Send" to send the request.
+4. The reviews with the selected status will be displayed.
+
+**To get reviews of a specific user:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/reviews/user/{user}".
+2. Replace "{user}" with the name of the user you want to query.
+3. Click "Send" to send the request.
+4. The reviews of the selected user will be displayed.
+
+**To get information about a specific vote:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/votes/{id_vote}".
+2. Replace "{id_vote}" with the ID of the vote you want to query.
+3. Click "Send" to send the request.
+4. The information of the selected vote will be displayed.
+
+**To get information about all votes of a specific review:**
+
+1. Select the HTTP method "GET" and insert the URL "http://localhost:8080/votes/review/{id_review}".
+2. Replace "{id_review}" with the ID of the review you want to query.
+3. Click "Send" to send the request.
+4. The votes of the selected review will be displayed.
+
+<br>
+
 ## Stopping the services
 You can stop the services at any time by using the `docker-compose down` command in the directory where the `docker-compose.yml` file is saved.
 
