@@ -1,0 +1,159 @@
+version: '3.9'
+
+services:
+
+  # Eureka Server (Discovery System)
+  discovery-system:
+    image: acmeproject/discovery-system:latest
+    ports:
+      - 8761:8761
+    networks:
+      - acme-network
+
+  # RabbitMQ (Message Broker)
+  message-broker:
+    image: rabbitmq:3.11.10-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=123456
+    networks:
+      - acme-network
+
+  # Axon Server (Event Sourcing)
+  event-sourcing:
+    image: axoniq/axonserver:latest
+    volumes:
+      - axonserver-data:/data
+      - axonserver-events:/eventdata
+      - axonserver-config:/config:ro
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+      - '8224:8224'
+    networks:
+      - acme-network
+
+  load-balancer:
+    image: acmeproject/load-balancer
+    depends_on:
+      - discovery-system
+    ports:
+      - 8080:8080
+    networks:
+      - acme-network
+
+  product-command-bootstrapper:
+    image: acmeproject/product-command-bootstrapper
+    depends_on:
+      - event-sourcing
+      - message-broker
+    networks:
+      - acme-network
+
+  # product-query-bootstrapper:
+  #   image: acmeproject/product-query-bootstrapper
+  #   depends_on:
+  #     - event-sourcing
+  #     - message-broker
+  #   networks:
+  #     - acme-network
+
+  review-command-bootstrapper:
+    image: acmeproject/review-command-bootstrapper
+    depends_on:
+      - event-sourcing
+      - message-broker
+    networks:
+      - acme-network
+
+  # review-query-bootstrapper:
+  #   image: acmeproject/review-query-bootstrapper
+  #   depends_on:
+  #     - event-sourcing
+  #     - message-broker
+  #   networks:
+  #     - acme-network
+
+  vote-command-bootstrapper:
+    image: acmeproject/vote-command-bootstrapper
+    depends_on:
+      - event-sourcing
+      - message-broker
+    networks:
+      - acme-network
+
+  # vote-query-bootstrapper:
+  #   image: acmeproject/vote-query-bootstrapper
+  #   depends_on:
+  #     - event-sourcing
+  #     - message-broker
+  #   networks:
+  #     - acme-network
+
+  product-command:
+    image: acmeproject/product-command
+    depends_on:
+      - discovery-system
+      - load-balancer
+      - product-command-bootstrapper
+    networks:
+      - acme-network
+
+  # product-query:
+  #   image: acmeproject/product-query
+  #   depends_on:
+  #     - discovery-system
+  #     - load-balancer
+  #     - product-query-bootstrapper
+  #   networks:
+  #     - acme-network
+
+  review-command:
+    image: acmeproject/review-command
+    depends_on:
+      - discovery-system
+      - message-broker
+      - review-command-bootstrapper
+    networks:
+      - acme-network
+
+  # review-query:
+  #   image: acmeproject/review-query
+  #   depends_on:
+  #     - discovery-system
+  #     - message-broker
+  #     - review-query-bootstrapper
+  #   networks:
+  #     - acme-network
+
+  vote-command:
+    image: acmeproject/vote-command
+    depends_on:
+      - discovery-system
+      - message-broker
+      - vote-command-bootstrapper
+    networks:
+      - acme-network
+
+  vote-query:
+    image: acmeproject/vote-query
+    depends_on:
+      - discovery-system
+      - message-broker
+      - vote-query-bootstrapper
+    networks:
+      - acme-network
+
+# ACME Network
+networks:
+  acme-network:
+    name: acme-network
+    driver: bridge
+    
+volumes:
+  axonserver-data:
+  axonserver-events:
+  axonserver-config:
