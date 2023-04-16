@@ -53,13 +53,13 @@ services:
     networks:
       - acme-network
 
-  # product-query-bootstrapper:
-  #   image: acmeproject/product-query-bootstrapper
-  #   depends_on:
-  #     - event-sourcing
-  #     - message-broker
-  #   networks:
-  #     - acme-network
+  product-query-bootstrapper:
+    image: acmeproject/product-query-bootstrapper
+    depends_on:
+      - event-sourcing
+      - message-broker
+    networks:
+      - acme-network
 
   review-command-bootstrapper:
     image: acmeproject/review-command-bootstrapper
@@ -69,13 +69,13 @@ services:
     networks:
       - acme-network
 
-  # review-query-bootstrapper:
-  #   image: acmeproject/review-query-bootstrapper
-  #   depends_on:
-  #     - event-sourcing
-  #     - message-broker
-  #   networks:
-  #     - acme-network
+  review-query-bootstrapper:
+    image: acmeproject/review-query-bootstrapper
+    depends_on:
+      - event-sourcing
+      - message-broker
+    networks:
+      - acme-network
 
   vote-command-bootstrapper:
     image: acmeproject/vote-command-bootstrapper
@@ -85,13 +85,13 @@ services:
     networks:
       - acme-network
 
-  # vote-query-bootstrapper:
-  #   image: acmeproject/vote-query-bootstrapper
-  #   depends_on:
-  #     - event-sourcing
-  #     - message-broker
-  #   networks:
-  #     - acme-network
+  vote-query-bootstrapper:
+    image: acmeproject/vote-query-bootstrapper
+    depends_on:
+      - event-sourcing
+      - message-broker
+    networks:
+      - acme-network
 
   product-command:
     image: acmeproject/product-command
@@ -120,14 +120,14 @@ services:
     networks:
       - acme-network
 
-  # review-query:
-  #   image: acmeproject/review-query
-  #   depends_on:
-  #     - discovery-system
-  #     - message-broker
-  #     - review-query-bootstrapper
-  #   networks:
-  #     - acme-network
+  review-query:
+    image: acmeproject/review-query
+    depends_on:
+      - discovery-system
+      - message-broker
+      - review-query-bootstrapper
+    networks:
+      - acme-network
 
   vote-command:
     image: acmeproject/vote-command
@@ -138,14 +138,14 @@ services:
     networks:
       - acme-network
 
-  vote-query:
-    image: acmeproject/vote-query
-    depends_on:
-      - discovery-system
-      - message-broker
-      - vote-query-bootstrapper
-    networks:
-      - acme-network
+  # vote-query:
+  #   image: acmeproject/vote-query
+  #   depends_on:
+  #     - discovery-system
+  #     - message-broker
+  #     - vote-query-bootstrapper
+  #   networks:
+  #     - acme-network
 
 # ACME Network
 networks:
