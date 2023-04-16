@@ -77,7 +77,7 @@ Now you can use the services locally with docker-compose. Make sure the services
 
 - Cloning: Multiple instances of each of the above applications are deployed in containers.
 
-# Requirements
+## Requirements
 
 **Non-functional requirements**
 - Deployment must be automated through CI/CD.
