@@ -46,8 +46,7 @@ docker-compose up -d
 5. To access the services, use the following links:
 
 - Discovery System (Eureka Server): http://localhost:8761
-- Message Broker: http://localhost:15672
-    credentials:(Username: admin | Password: 123456)
+- Message Broker: http://localhost:15672 (Username: admin | Password: 123456)
 - Axon Server (Event Sourcing): http://localhost:8024
 
 <br>
