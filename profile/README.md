@@ -63,16 +63,28 @@ If you want to create 5 new instances of the "product-command" service after sta
 
 1. Create a POST request to http://localhost:8080/products, with the JSON {"sku": "123456789123", "designation": "Laptop", "description": "Black"} in the request body.
 
-2. Create a POST request to http://localhost:8080/products/123456789123/reviews, with the JSON {"user": "John Doe", "reviewText": "This product is great!", "rating": 4.5} in the request body.
+2. Create a POST request to http://localhost:8080/products/123456789123/reviews, with the JSON in the request body.
+```
+{"user": "John Doe", "reviewText": "This product is great!", "rating": 4.5} 
+```
 
-3. Create a PATCH request to localhost:8080/reviews/{id_review}/acceptreject/APPROVED, where {id_review} is the ID of the review you want to accept/reject.
+3. Create a PATCH request to localhost:8080/reviews/{id_review}/acceptreject/APPROVED, where {id_review} is the ID of the review you want to accept.
 
-4. Create a POST request to localhost:8080/votes, with the JSON {"user": "Jane Doe", "reviewId": "{id_review}", "voteType": "UP_VOTE"} in the request body.
+4. Create a POST request to localhost:8080/votes, with the JSON in the request body.
+```
+{"user": "Jane Doe", "reviewId": "{id_review}", "voteType": "UP_VOTE"}
+```
 
-5. Create a POST request to http://localhost:8080/products, with the JSON {"sku": "123456789156", "designation": "Mouse", "description": "Black"} in the request body.
+5. Create a POST request to http://localhost:8080/products, with the JSON in the request body.
+```
+{"sku": "123456789156", "designation": "Mouse", "description": "Black"} 
+```
 
-6. Create a POST request to localhost:8080/votes/for-non-existing-review, with the JSON {"user": "Jonas", "voteType": "UP_VOTE", "review": {"sku": "123456789156", "user": "Maria", "reviewText": "Great!", "rating": 4.0}} in the request body.
+6. Create a POST request to localhost:8080/votes/for-non-existing-review, with the JSON in the request body.
+```
+{"user": "Jonas", "voteType": "UP_VOTE", "review": {"sku": "123456789156", "user": "Maria", "reviewText": "Great!", "rating": 4.0}}
 
+```
 In all requests, select the content type "JSON (application/json)" and click "Send" to send the request.
 
 <br>
