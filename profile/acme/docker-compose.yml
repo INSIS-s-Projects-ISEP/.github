@@ -1,6 +1,13 @@
 version: '3.9'
 
 services:
+  # Mongodb database
+  mongo: 
+    image: bitnami/mongodb:latest
+    ports:
+      - 27017:27017
+    networks:
+      - acme-network
 
   # Eureka Server (Discovery System)
   discovery-system:
@@ -58,6 +65,7 @@ services:
     depends_on:
       - event-sourcing
       - message-broker
+      - mongo
     networks:
       - acme-network
 
